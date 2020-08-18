@@ -1,8 +1,23 @@
-const ndjson = require('./ndjson.js')
+// export a `parse()` and `stringify()`
+// function by assigning properties onto the `exports` object.
 
-console.log(ndjson.parse(prompt()))
-console.log(ndjson.stringify(prompt()))
+exports.parse = function(str){
+    return str.split('\n').map(JSON.parse)
+}
 
-//access it like a key for an obj
+exports.stringify = function(rows){
+    return rows.map(JSON.stringify).join('\n')
+}
 
-//dot notation access
+// TAP version 13
+// # (anonymous)
+// ok 1 >= 2 files in the bundle
+// ok 2 should be equal
+// ok 3 relative require
+// ok 4 prompt() should be called in your entry file
+// #########################################
+// ###   YOUR SOLUTION IS NOT CORRECT!   ###
+// #########################################
+
+
+// ok 5 prompt() should not be called in your ndjson file

@@ -1,17 +1,9 @@
+const ndjson = require('./ndjson.js')
 
-// `require('uniq')` returns a `uniq(xs)` function that removes duplicate
-// items from an array input `xs`.
+//first is a string you should parse into an array of objects
+ndjson.parse(prompt())
 
-// You will also need `prompt()`, a built in function available to browsers that
-// asks the user to enter some text, and returns a string.
+//2nd value is an array you should serialize back into a string
+ndjson.stringify(prompt())
 
-// For this level, use `prompt()` to fetch a string. Split the string that
-// `prompt()` returns by commas (`str.split(',')` returns a separated array of
-// strings) and run this array through `uniq()` to discard repeated items.
-// Use `console.log()` to print the resulting uniq array.
-
-const uniq = require('uniq')
-const answer = prompt('enter a value')
-
-console.log(uniq(answer.split(',')))
-
+//question I asked Yahya Hafez and Mike - why are we parsing twice? we are not, it's just the name of the export
